@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDN Video with Ad</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        .video-container {
+            position: relative;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        video {
+            width: 640px;
+            height: 360px;
+        }
+        .ad-banner {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 5px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .ad-banner img {
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CDN Video with Banner Ad</h1>
+    
+    <div class="video-container">
+        <video id="myVideo" controls>
+            <source src="video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="ad-banner" id="adBanner">
+            <a href="https://your-ad-link.com" target="_blank">
+                <img src="ad-banner.png" alt="Advertisement">
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
