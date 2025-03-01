@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CDN Video with JavaScript Ads</title>
+    <title>CDN Video with Persistent Ad</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -19,46 +19,47 @@
             width: 640px;
             height: 360px;
         }
-	.ad-banner {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  width: 200px;
-  height: 100px;
-  border: 3px solid #73AD21;
-}
-	    
-	    
         .ad-banner {
-	   
-            background: rgba(0, 0, 0, 0.7);
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            background: rgba(0, 0, 0, 0.8);
             padding: 5px;
-            text-align: top;
+            text-align: center;
             border-radius: 5px;
-            display: none;
+            display: none; /* Initially hidden */
         }
         .ad-banner img {
-            width: 50%;
+            width: 100%;
             border-radius: 5px;
             cursor: pointer;
         }
         .close-btn {
             position: absolute;
-            top: 5px;
+            top: 2px;
             right: 5px;
             color: white;
+            font-size: 16px;
             cursor: pointer;
             font-weight: bold;
+            background: red;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     </style>
 </head>
 <body>
 
-    <h1>CDN Video with JavaScript Ads</h1>
+    <h1>CDN Video with Persistent Ad</h1>
     
     <div class="video-container">
         <video id="myVideo" controls>
-	
             <source src="vid.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -89,7 +90,6 @@
 
         function showAd() {
             document.getElementById("adBanner").style.display = "block";
-            setTimeout(hideAd, 10000); // Hide ad after 10 seconds
         }
 
         function hideAd() {
