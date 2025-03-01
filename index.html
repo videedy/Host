@@ -85,7 +85,9 @@
 
     <script>
   
-
+	      document.getElementById("myVideo").addEventListener("play", function() {
+            setTimeout(showAd, 0); // Show ad after 5 seconds
+        });
         function showAd() {
             document.getElementById("adBanner").style.display = "block";
         }
