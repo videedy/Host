@@ -72,25 +72,30 @@
             
             <a href="https://your-ad-link.com" target="_blank">
                 <img src="ad-banner.png" alt="Advertisement">
+  
+            </a>
+        </div>
+    </div>
 
+    <script>
+        document.getElementById("myVideo").addEventListener("play", function() {
+            setTimeout(showAd, 0); // Show ad after 0 seconds
+        });
+
+        function showAd() {
+            document.getElementById("adBanner").style.display = "block";
+        }
+
+        function hideAd() {
+            document.getElementById("adBanner").style.display = "none";
+        }
+    </script>
 
 	<div class="video-container">
         <video id="myVideo" controls autoplay>
             <source src="vid.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-		    
-            </a>
-        </div>
-    </div>
-
-    <script>
-        function hideAd() {
-            document.getElementById("adBanner").style.display = "none";
-        }
-    </script>
-
-
 
 
 
