@@ -6,18 +6,22 @@
     <title>CDN Video with Persistent Ad</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f4f4f4;
+            margin: 0;
+            background: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
         }
         .video-container {
             position: relative;
-            display: inline-block;
-            margin-top: 20px;
+            max-width: 100%;
+            max-height: 100vh;
         }
         video {
-            width: 640px;
-            height: 360px;
+            width: 100%;
+            height: auto;
+            display: block;
         }
         .ad-banner {
             position: absolute;
@@ -29,7 +33,7 @@
             padding: 5px;
             text-align: center;
             border-radius: 5px;
-            display: none; /* Initially hidden */
+            display: block; /* Always visible until closed */
         }
         .ad-banner img {
             width: 100%;
@@ -56,10 +60,8 @@
 </head>
 <body>
 
-    <h1>CDN Video with Persistent Ad</h1>
-    
     <div class="video-container">
-        <video id="myVideo" controls>
+        <video id="myVideo" controls autoplay>
             <source src="vid.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -72,14 +74,6 @@
     </div>
 
     <script>
-        document.getElementById("myVideo").addEventListener("play", function() {
-            setTimeout(showAd, 0); // Show ad after 0 seconds
-        });
-
-        function showAd() {
-            document.getElementById("adBanner").style.display = "block";
-        }
-
         function hideAd() {
             document.getElementById("adBanner").style.display = "none";
         }
