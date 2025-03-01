@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CDN Video with Ad</title>
+    <title>CDN Video with JavaScript Ads</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -29,17 +29,26 @@
             padding: 5px;
             text-align: center;
             border-radius: 5px;
+            display: none;
         }
         .ad-banner img {
             width: 100%;
             border-radius: 5px;
             cursor: pointer;
         }
+        .close-btn {
+            position: absolute;
+            top: 2px;
+            right: 5px;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
 
-    <h1>CDN Video with Banner Ad</h1>
+    <h1>CDN Video with JavaScript Ads</h1>
     
     <div class="video-container">
         <video id="myVideo" controls>
@@ -47,23 +56,39 @@
             Your browser does not support the video tag.
         </video>
         <div class="ad-banner" id="adBanner">
-            <a href="https://your-ad-link.com" target="_blank">
+            <span class="close-btn" onclick="hideAd()">✖</span>
 
-                <script type="text/javascript">
+		<script type="text/javascript">
 	atOptions = {
-		'key' : '2b6ea24493475f85ffc622853d2265a4',
+		'key' : 'da8a32dc450dec75249ad38e4e66c17a',
 		'format' : 'iframe',
-		'height' : 250,
-		'width' : 300,
+		'height' : 60,
+		'width' : 468,
 		'params' : {}
 	};
 </script>
-<script type="text/javascript" src="//sparrowaboveaveragedefence.com/2b6ea24493475f85ffc622853d2265a4/invoke.js"></script>
-                
+<script type="text/javascript" src="//sparrowaboveaveragedefence.com/da8a32dc450dec75249ad38e4e66c17a/invoke.js"></script>
+		
+            <a href="https://your-ad-link.com" target="_blank">
                 <img src="ad-banner.png" alt="Advertisement">
             </a>
         </div>
     </div>
+
+    <script>
+        document.getElementById("myVideo").addEventListener("play", function() {
+            setTimeout(showAd, 5000); // Show ad after 5 seconds
+        });
+
+        function showAd() {
+            document.getElementById("adBanner").style.display = "block";
+            setTimeout(hideAd, 10000); // Hide ad after 10 seconds
+        }
+
+        function hideAd() {
+            document.getElementById("adBanner").style.display = "none";
+        }
+    </script>
 
 </body>
 </html>
